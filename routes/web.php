@@ -26,6 +26,11 @@ Route::get('/contact', [
     'as' => 'contact'
 ])->middleware('guest');
 
+Route::post('/sendingmessage', [
+    'uses' => 'HomeController@postContact',
+    'as' => 'message-sent'
+]);
+
 Route::get('/homepage',[
     'uses' => 'HomeController@getHomePage',
     'as' => 'homepage'

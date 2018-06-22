@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Mail;
+use App\Mail\MessageSent;
 use App\Post;
 use App\Course;
 use App\Lecture;
@@ -22,6 +24,15 @@ class HomeController extends Controller
     public function getContact()
     {
         return view('contact');
+    }
+
+    public function postContact(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        $body = $request->body;
+        $subject = $request->subject;
+        Mail::send(new MessageSent($name,$email,$body, $subject));
+        return redirect()->route('index');
     }
 
     public function getUserContact()
