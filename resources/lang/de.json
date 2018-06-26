@@ -1,0 +1,21 @@
+{
+    "Home" :  "Anfang",
+    "Login" : "Eingang",
+    "Register" : "Registrierung",
+    "Password" : "Leitwort",
+    "Name" : "Name",
+    "Lastname" : "Familienname",
+    "Password Confirmation" : "Bestätigung des Leitworts",
+    "Contacts" : "Kontakte",
+    "Email" : "Email",
+    "Phone" : "Telefon",
+    "About" : "Bezüglich",
+    "Message" : "Nachricht",
+    "Send" : "Schicken",
+    "Courses" : "Kurse",
+    "Logout" : "Logout",
+    "See all courses" : "Alle Kurse ansehen",
+    "See all posts" : "Alle Veröffentlichungen ansehen",
+    "Lectures" : "Vorlesungen",
+    "Course Works" : "Kursarbeiten"
+}

@@ -25,7 +25,7 @@ class LectureController extends Controller
         $courses = Course::all();
         return view('admin.system.create_lecture', ['courses' => $courses]);
     }
-
+    
     public function postCreateLecture(Request $request){
         $this->validate($request, [
             'name' => 'required',

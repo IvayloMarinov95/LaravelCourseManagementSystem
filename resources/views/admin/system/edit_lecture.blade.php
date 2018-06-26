@@ -10,7 +10,7 @@
         <form action="{{ route('admin.system.lecture.update') }}" method="post">
             <div class="input-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') ? Request::old('name') : isset($product) ? $product->name : '' }}"/>
+                <input type="text" name="name" id="name" {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') ? Request::old('name') : isset($lecture) ? $lecture->name : '' }}"/>
             </div>
             <button type="submit" class="btn">Save Lecture</button>
             <input type="hidden" name="_token" value="{{ Session::token() }}" />
@@ -18,4 +18,3 @@
         </form>
     </div>
 @endsection
-

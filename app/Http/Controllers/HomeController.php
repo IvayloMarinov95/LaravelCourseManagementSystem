@@ -68,7 +68,7 @@ class HomeController extends Controller
     }
 
     public function postCourseWork(Request $request, $course_id){
-        $coursework = new Coursework();
+        $coursework = new CourseWork();
         $coursework->document_name = $request->file->getClientOriginalName();
         // $lecture->document_path = config('app.lectures-folder') . str_random();
         $coursework->course_id = $course_id;
@@ -81,6 +81,4 @@ class HomeController extends Controller
         $coursework->save();
         return redirect()->route('course-single',['course_id' => $course_id]);
     }
-
-
 }

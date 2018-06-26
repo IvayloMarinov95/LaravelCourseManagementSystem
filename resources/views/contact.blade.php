@@ -12,25 +12,25 @@
                     <form role="form" action="{{route('message-sent')}}" method="post">
                     @csrf
                     <br style="clear:both">
-                                <h1 style="margin-bottom: 60px; text-align: left;">За Контакти</h3>
+                                <h1 style="margin-bottom: 60px; text-align: left;">{{__('Contacts')}}</h3>
                           <div class="form-group">
-                        <input type="text" class="form-control" style="width: 250px;" id="name" name="name" placeholder="Име" required>
+                        <input type="text" class="form-control" style="width: 250px;" id="name" name="name" placeholder="{{__('Name')}}" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" style="width: 250px;" id="phone" name="phone" placeholder="Телефон" required>
+                        <input type="text" class="form-control" style="width: 250px;" id="phone" name="phone" placeholder="{{_('Phone')}}" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" style="width: 350px;" id="email" name="email" placeholder="Email" required>
+                        <input type="text" class="form-control" style="width: 350px;" id="email" name="email" placeholder="{{__('Email')}}" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" style="width: 350px;" id="subject" name="subject" placeholder="Относно" required>
+                        <input type="text" class="form-control" style="width: 350px;" id="subject" name="subject" placeholder="{{__('About')}}" required>
                       </div>
                                 <div class="form-group">
-                                <textarea class="form-control" type="textarea" name="body" id="body" placeholder="Съобщение" maxlength="500" rows="12"></textarea>
+                                <textarea class="form-control" type="textarea" name="body" id="body" placeholder="{{__('Message')}}" maxlength="500" rows="12"></textarea>
                                     <span class="help-block"><p id="characterLeft" class="help-block ">Limit: 500 symbols</p></span>                    
                                 </div>
                         
-                    <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Изпрати</button>
+                    <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">{{__('Send')}}</button>
                     </form>
                 </div>
             </div>

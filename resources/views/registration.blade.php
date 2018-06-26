@@ -13,23 +13,23 @@
               <form action="{{ route('register')}}" method="post">
               @csrf
               <br style="clear:both">
-                          <h1 style="margin-bottom: 60px; text-align: left;">Регистрация</h3>
+                          <h1 style="margin-bottom: 60px; text-align: left;">{{__('Register')}}</h3>
                     <div class="form-group">
-                  <input type="text" class="form-control" style="width: 250px;" id="name" name="name" placeholder="Име"  {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') }}">
+                  <input type="text" class="form-control" style="width: 250px;" id="name" name="name" placeholder="{{__('Name')}}"  {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') }}">
                 </div>
                           <div class="form-group">
-                  <input type="text" class="form-control" style="width: 250px;" id="lastname" name="lastname" placeholder="Фамилия"  {{ $errors->has('lastname') ? 'class=has-error' : '' }} value="{{ Request::old('lastname') }}">
+                  <input type="text" class="form-control" style="width: 250px;" id="lastname" name="lastname" placeholder="{{__('Lastname')}}"  {{ $errors->has('lastname') ? 'class=has-error' : '' }} value="{{ Request::old('lastname') }}">
                 </div>
                           <div class="form-group">
-                  <input type="text" class="form-control" style="width: 250px;" id="email" name="email" placeholder="Email" {{ $errors->has('email') ? 'class=has-error' : '' }} value="{{ Request::old('email') }}">
+                  <input type="text" class="form-control" style="width: 250px;" id="email" name="email" placeholder="{{__('Email')}}" {{ $errors->has('email') ? 'class=has-error' : '' }} value="{{ Request::old('email') }}">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" style="width: 250px;" id="password" name="password" placeholder="Парола">
+                  <input type="password" class="form-control" style="width: 250px;" id="password" name="password" placeholder="{{__('Password')}}">
                 </div> 
                 <div class="form-group">
-                  <input type="password" class="form-control" style="width: 250px;" name="password_confirmation" placeholder="Потвърди паролата">
+                  <input type="password" class="form-control" style="width: 250px;" name="password_confirmation" placeholder="{{__('Password Confirmation')}}">
                 </div>         
-              <button type="submit" id="btn" class="btn btn-primary pull-right">Регистрация</button>
+              <button type="submit" id="btn" class="btn btn-primary pull-right">{{__('Register')}}</button>
               </form>
           </div>
           </div>

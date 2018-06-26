@@ -11,7 +11,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="{{route('courses')}}" class="btn">Покажи всички курсове</a></li>
+                    <li><a href="{{route('courses')}}" class="btn">{{__('See all courses')}}</a></li>
                 </ul>
             </nav>
         </header>
@@ -33,7 +33,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="{{route('posts')}}" class="btn">Виж всички публикации</a></li>
+                    <li><a href="{{route('posts')}}" class="btn">{{__("See all posts")}}</a></li>
                 </ul>
             </nav>
         </header>

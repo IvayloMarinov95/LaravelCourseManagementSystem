@@ -17,17 +17,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li  {{Request::is('/')? 'class=active' : '' }}><a href="{{route('index')}}">Начало <span class="sr-only">(current)</span></a></li>
-        <li {{Request::is('registration*')? 'class=active' : '' }}><a href="{{route('registration')}}">Регистрация</a></li>
-        <li  {{Request::is('contact*')? 'class=active' : '' }}><a href="{{route('contact')}}">Контакти</a></li>
+        <li  {{Request::is('/')? 'class=active' : '' }}><a href="{{route('index')}}">{{__('Home')}} <span class="sr-only">(current)</span></a></li>
+        <li {{Request::is('registration*')? 'class=active' : '' }}><a href="{{route('registration')}}">{{__('Register')}}</a></li>
+        <li  {{Request::is('contact*')? 'class=active' : '' }}><a href="{{route('contact')}}">{{__('Contacts')}}</a></li>
         <li class="dropdown">
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><img src="img/bg.png" style="width:28px; height: 18px;"/> <span class="caret"></span></a>
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><img src="{{asset('img/' .LaravelLocalization::getCurrentLocale(). '.png')}}" style="width:28px; height: 18px;"/> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li style="text-align: left"><a href="#"><img src="img/bg.png" class="lang"/>BG</a></li>
-            <li role="separator" class="divider"></li>
-            <li style="text-align: left"><a href="#"><img src="img/de.png" class="lang"/>DE</a></li>
-            <li role="separator" class="divider"></li>
-            <li style="text-align: left"><a href="#"><img src="img/en.png" class="lang"/>EN</a></li>
+          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <li>
+                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"><img src="{{asset('img/'.$localeCode. '.png')}}" class="lang"/>
+                    {{ $properties['native'] }}
+                </a>
+            </li>
+          @endforeach
           </ul>
         </li>
       </ul>

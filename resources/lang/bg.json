@@ -1,0 +1,21 @@
+{
+    "Home" :  "Начало",
+    "Login" : "Вход",
+    "Register" : "Регистрация",
+    "Password" : "Парола",
+    "Name" : "Име",
+    "Lastname" : "Фамилия",
+    "Password Confirmation" : "Потвърди паролата",
+    "Contacts" : "Контакти",
+    "Email" : "Имейл",
+    "Phone" : "Телефон",
+    "About" : "Относно",
+    "Message" : "Съобщение",
+    "Send" : "Изпрати",
+    "Courses" : "Курсове",
+    "Logout" : "Изход",
+    "See all courses" : "Виж всички курсове",
+    "See all posts" : "Виж всички публикации",
+    "Lectures" : "Лекции",
+    "Course Works" : "Курсови Работи"
+}

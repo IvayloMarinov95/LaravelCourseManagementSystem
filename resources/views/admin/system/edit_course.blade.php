@@ -10,7 +10,7 @@
         <form action="{{ route('admin.system.course.update') }}" method="post">
             <div class="input-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') ? Request::old('name') : isset($category) ? $category->name : '' }}"/>
+                <input type="text" name="name" id="name" {{ $errors->has('name') ? 'class=has-error' : '' }} value="{{ Request::old('name') ? Request::old('name') : isset($course) ? $course->name : '' }}"/>
             </div>
             <button type="submit" class="btn">Save Course</button>
             <input type="hidden" name="_token" value="{{ Session::token() }}" />

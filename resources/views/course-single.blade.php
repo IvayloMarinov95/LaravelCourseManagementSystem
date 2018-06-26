@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="panel panel-primary panel1-holder">
-                    <div class="panel-heading">Лекции</div>
+                    <div class="panel-heading">{{__('Lectures')}}</div>
                     @foreach($course->lectures as $lecture)
                     <div class="panel-body"><a href="{{ $lecture->document }}">{{$lecture->name}}</a></div>
                     @endforeach
@@ -17,7 +17,7 @@
                     <div class="panel-heading">
                     <form action="{{route('post-coursework', ['course_id' => $course->id])}}" method = "post" enctype="multipart/form-data">
                     @csrf
-                        <span>Курсови работи&nbsp;|&nbsp;</span><input type="file" id="file" name="file" multiple>
+                        <span>{{__('Course Works')}}&nbsp;|&nbsp;</span><input type="file" id="file" name="file" multiple>
                         <div class="submit-holder clearfix">
                             <input type="submit" value="Добави">
                         </div>

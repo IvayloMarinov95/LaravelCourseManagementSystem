@@ -17,26 +17,28 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li {{Request::is('homepage')? 'class=active' : '' }}><a href="{{route('homepage')}}">Начало <span class="sr-only">(current)</span></a></li>
-        <li {{Request::is('courses')? 'class=active' : '' }}><a href="{{route('courses')}}">Курсове</a></li>
-        <li {{Request::is('usercontact*')? 'class=active' : '' }}><a href="{{route('usercontact')}}">Контакти</a></li>
+        <li {{Request::is('homepage')? 'class=active' : '' }}><a href="{{route('homepage')}}">{{__('Home')}} <span class="sr-only">(current)</span></a></li>
+        <li {{Request::is('courses')? 'class=active' : '' }}><a href="{{route('courses')}}">{{__('Courses')}}</a></li>
+        <li {{Request::is('usercontact*')? 'class=active' : '' }}><a href="{{route('usercontact')}}">{{__('Contacts')}}</a></li>
         <li><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Изход
+                                        {{__('Logout')}}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form></li>
         <li class="dropdown" >
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><img src="img/bg.png" style="width:28px; height: 18px;"/> <span class="caret"></span></a>
+        <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><img src="{{asset('img/' .LaravelLocalization::getCurrentLocale(). '.png')}}" style="width:28px; height: 18px;"/> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li style="text-align: left"><a href="#"><img src="{{asset('img/bg.png')}}" class="lang"/>BG</a></li>
-            <li role="separator" class="divider"></li>
-            <li style="text-align: left"><a href="#"><img src="{{asset('img/de.png')}}" class="lang"/>DE</a></li>
-            <li role="separator" class="divider"></li>
-            <li style="text-align: left"><a href="#"><img src="{{asset('img/en.png')}}" class="lang"/>EN</a></li>
+          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <li>
+                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"><img src="{{asset('img/'.$localeCode. '.png')}}" class="lang"/>
+                    {{ $properties['native'] }}
+                </a>
+            </li>
+          @endforeach
           </ul>
         </li>
       </ul>
